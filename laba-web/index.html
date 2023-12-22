@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" >
+        <link href="css/my-file.css" rel="stylesheet">
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="index.js"> </script>
+        <title>Bootstrap</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+            </div>
+            <div class="header_logo">
+                <div class="header-box">
+                    <div class="menu-search_section">
+                        <ul class="simple-menuu">
+                            <li>Dashboard</li>
+                            <li>Messages</li>
+                            <li>UI Elements</li>
+                            <li>Charts</li>
+                            <li>Calendar</li>
+                        </ul>
+                        <span class="play-icon"></span>
+                        <div class="simple-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span id="search" class="search-icon"></span>
+                    </div>
+                    <div class="settings-logout_section">
+                        <span class="settings-icon"><ul id="but-slide1-settings">
+                        <li>REMOVE</li>
+                        <li>ADD</li>
+                        <li>RELOAD</li></ul> </span> 
+                        <span class="logout-icon"></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <aside>
+                <div class="user-profile">
+                    <div class="user-info">
+                        <div class="user-pic">
+                            <img src="img/prof.pic.png" alt="">
+                            <span class="availability-mark"></span>
+                        </div>
+                        <div class="user-main-info">
+                            <p class="user-name text-center">Ononto Jolil</p>
+                            <p class="user-country text-center">Jolilpur, Mars</p>
+                        </div>
+                    </div>
+                </div>
+                <nav class="user-menu">
+                    <a id="dashboard" href="#">Dashboard</a>
+                    <a id="messages" href="#">Messages <span>32</span></a>
+                    <a id="elements" href="#">UI Elements</a>
+                    <a id="charts" href="#">Charts</a>
+                    <a id="calendar" href="#">Calendar</a>
+                </nav>
+                <span class="side-bar_line"></span>
+                <div class="user-settings">
+                    <a id="user" href="#">User</a>
+                    <a id="security" href="#">Security</a>
+                    <a id="customers" href="#">Customers</a>
+                </div>
+            </aside>
+
+            <div class="content">
+                <div class="info-blocks row">
+                    <div class="sales-block col-md-6 col-lg-3 col-xs-12">
+
+                                <div class="col-xs-3 col-lg-3 sales_icon">
+                                </div>
+                                <div class=" col-xs-9 col-lg-9 t-sales_info">
+                                    <p class="text-center text-capitalize">TOTAL SALES</p>
+                                    <p class="text-center"><span class="dollar">$</span>215,645</p>
+                                </div>
+
+                    </div>
+                    <div class="quote-block col-md-6 col-lg-3 col-xs-12">
+                        <div class=" col-xs-3 col-lg-3 quote-icon">
+                        </div>
+                        <div class="col-xs-9 col-lg-9 quote-info">
+                            <p class="text-center text-capitalize">NEW QUOTE</p>
+                            <p class="text-center">523,543</p>
+                        </div>
+                    </div>
+                    <div class="orders-block col-md-6 col-lg-3 col-xs-12">
+                        <div class="col-xs-3 col-lg-3 orders-icon">
+                        </div>
+                        <div class="col-xs-9 col-lg-9 orders-info">
+                            <p class="text-center text-capitalize">ORDERS</p>
+                            <p class="text-center">23,414</p>
+                        </div>
+                    </div>
+                    <div class="products-block col-md-6 col-lg-3 col-xs-12">
+                        <div class="col-xs-3 col-lg-3 products-icon">
+                        </div>
+                        <div class="col-xs-9 col-lg-9 products-info">
+                            <p class="text-center text-capitalize">PRODUCTS</p>
+                            <p class="text-center">19,087</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9 product-visitors-block">
+                        <div class="column-stuff">
+                            <div class="visitor-info">
+                                <h3>Product Visitors</h3>
+                                <span class="visitor-part">
+                                    <span class="visitors-icon">
+                                        <img src="img/visitors_icon.png" alt="">
+                                    </span>
+                                    <span class="visitors">Visitors</span>
+                                </span>
+                            </div>
+                            <span class="visitors-chart">
+                                <img src="img/chart.jpg" alt="">
+                                <!canvas id="MyChart1">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 weekly-total_charts">
+                        <div class="weekly">
+                            <p class="text-center">Weekly Sales & Expense</p>
+                            <canvas id="MyChart2">
+                        </div>
+                        <div class="total">
+                            <p class="text-center">Total Charge & Profit</p>
+                            <canvas id="MyChart3">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="web-traffic col-md-6">
+                        <div class="web-traffic-info">
+                            <div class="web-and-refresh">
+                                <h3>Website Traffic</h3>
+                                <span class="refresh_icon"></span>
+                            </div>
+                            <div id="trafficChart" class="traffic-chart">
+                                <canvas id="MyChart4">
+                                <div id="hover" class="hover-info"><span>Registered</span><br><span>9012</span></div>
+                            </div>
+                            <div class="colour-block">
+                                <div class="bounce_rectangular"><span class="purple-rectangular"></span><p>Bounce</p></div>
+                                <div class="visitor_rectangular"><span class="yellow-rectangular"></span><p>Visitors</p></div>
+                                <div class="registered_rectangular"><span class="blue-rectangular"></span><p>Registered</p></div>
+                            </div>
+                            <p class="web-traffic-details text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit,<br> sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        </div>
+                    </div>
+                    <div class="user-main-page col-md-6">
+                        <div class="user-page_column">
+                            <div class="profile-cover">
+                                <p class="name text-center">Ononto Jolil</p>
+                                <p class="nick-name text-center">Joker in Dhallywood</p>
+                            </div>
+                            <div class="user-photo">
+                                <img src="img/prof.pic.png" alt="">
+                            </div>
+                            <p class="user_info text-center">“Lorem ipsum dolor sit amet, consectetur adipising<br> elieat, sed do eiusmod tempor incididunt utmabor<br> edolore exercitation ullamco laboris nisi ut aliquip”</p>
+                            <div class="row">
+                                <div class="customers col-md-4">
+                                    <span class="numeral">179</span>
+                                    <p>Customers</p>
+                                </div>
+                                <div class="products col-md-4">
+                                    <span class="numeral">19K</span>
+                                    <p>Products</p>
+                                </div>
+                                <div class="followers col-md-4">
+                                    <span class="numeral">15K</span>
+                                    <p>Followers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table_stuff">
+                    <div class="whole-table">
+                        <div class="table-headline">
+                            <h3>Customer Ratings</h3>
+                        <span class="votes-refresh">
+                            <span>2,45,567 Votes</span>
+                            <span class="refresh-btn"></span>
+                        </span>
+                        </div>
+                        <div class="responsive_table">
+                            <table class="table-bordered">
+                                <tr>
+                                    <td class="awesome">The product is Awesome</td>
+                                    <td class="td_filler">
+                                    <span class="grey">
+                                        <span class="green-filler progress-bar"></span>
+                                    </span>
+                                    </td>
+                                    <td class="percentage">67%</td>
+                                </tr>
+                                <tr>
+                                    <td class="satisfied">Yeah I'm Satisfied with it</td>
+                                    <td class="td_filler">
+                                    <span class="grey">
+                                        <span class="blue-filler progress-bar"></span>
+                                    </span>
+                                    </td>
+                                    <td class="percentage">25%</td>
+                                </tr>
+                                <tr>
+                                    <td class="average">Average product, not bad</td>
+                                    <td class="td_filler">
+                                    <span class="grey">
+                                        <span class="yellow-filler progress-bar"></span>
+                                    </span>
+                                    </td>
+                                    <td class="percentage">7%</td>
+                                </tr>
+                                <tr>
+                                    <td class="not-useful">Not useful at all it Sucks</td>
+                                    <td class="td_filler">
+                                    <span class="grey">
+                                        <span class="red-filler progress-bar"></span>
+                                    </span>
+                                    </td>
+                                    <td class="percentage">15%</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+            </div>
+            </div>
+        </main>
+
+    </body>
+    <script>
+         $(document).ready(function () {
+             $(".settings-icon").click(function () {
+                 $("#but-slide1-settings").slideToggle();
+
+             })
+             $(".settings-icon").mouseleave(function () {
+                 $("#but-slide1-settings").hide();
+
+             })
+
+              $(".play-icon").click(function () {
+                 $(".simple-menuu").slideToggle();
+
+             })
+             
+         });
+    </script>
+</html>
